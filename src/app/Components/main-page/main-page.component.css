@@ -1,12 +1,8 @@
 bmm-left-menu {
-float: left;
-width: 22%;
-
-}
-bmm-top-bar{
   float: left;
-  width: 78%;
+  width: 22%;
 }
+
 .main-content{
   float: left;
   margin-left: 10px;

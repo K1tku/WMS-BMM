@@ -1,0 +1,11 @@
+bmm-left-menu {
+  float: left;
+  width: 22%;
+}
+
+.main-content{
+  float: left;
+  margin-left: 10px;
+  width: 77%;
+  height: 700px;
+}

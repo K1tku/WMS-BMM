@@ -5,3 +5,19 @@
 
 
 }
+
+.user{
+  position: absolute;
+  bottom: 13%;
+  background-color: white;
+  height: 45px;
+  width: 250px;
+  margin-left: 1%;
+}
+
+.logout{
+  position: absolute;
+  bottom: 13%;
+  margin-left: 18%;
+
+}
