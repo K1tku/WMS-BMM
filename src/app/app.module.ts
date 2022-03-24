@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { MainPageComponent } from './Components/main-page/main-page.component';
 import { LeftMenuComponent } from './Components/left-menu/left-menu.component';
-import { TopBarComponent } from './Components/top-bar/top-bar.component';
 import { LoginPageComponent } from './Components/login-page/login-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
@@ -16,6 +15,10 @@ import {MatIconModule} from '@angular/material/icon';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatSelectModule} from '@angular/material/select';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
 
 
 
@@ -25,8 +28,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     AppComponent,
     MainPageComponent,
     LeftMenuComponent,
-    TopBarComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    DashboardComponent
+
   ],
   imports: [
     BrowserModule,
@@ -39,7 +43,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatIconModule,
     FlexLayoutModule,
     MatFormFieldModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatBottomSheetModule,
+    MatMenuModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

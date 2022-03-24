@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 
+
 @Component({
   selector: 'bmm-left-menu',
   templateUrl: './left-menu.component.html',
@@ -8,12 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeftMenuComponent implements OnInit {
 
-  constructor() { }
+warehouses = ['WG', 'MAT', 'PROD', 'KJ']
+
+  constructor() {}
+
 
   ngOnInit(): void {
 
   }
 
-  logoIcon:string = "../../Images/icons/Logo.jpg";
 
 }

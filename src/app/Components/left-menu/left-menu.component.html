@@ -1,6 +1,16 @@
-<body>
-<button style=" position: absolute; margin-left: 10px; margin-top: 10px"><img [src]="logoIcon" width="70px" height="30px"></button>
-<button style="position: absolute; margin-top: 10px;margin-left: 120px; height: 30px; width: 200px">Magazyn</button>
+<div class="body">
+<button style=" position: absolute; height: 70px; width: 230px; margin-left: 5px; margin-top: 5px; background: url(assets/Icons/Logo.jpg)">
+</button>
+
+<button mat-flat-button [matMenuTriggerFor]="menu"  style="position: absolute; margin-top: 20px;margin-left: 250px; height: 40px; width: 80px">
+  Magazyn
+</button>
+<mat-menu #menu>
+  <button mat-menu-item>WG</button>
+  <button mat-menu-item>MAT</button>
+  <button mat-menu-item>PROD</button>
+</mat-menu>
+
 <button style=" position:absolute; height: 35px; width: 200px; margin-left: 75px; margin-top: 100px">Dashboard</button>
 <button style=" position:absolute; height: 35px; width: 200px; margin-left: 75px; margin-top: 160px">Operatorzy</button>
 <button style=" position:absolute; height: 35px; width: 200px; margin-left: 75px; margin-top: 220px">Magazyny</button>
@@ -12,5 +22,5 @@
 <button style=" position:absolute; height: 35px; width: 200px; margin-left: 75px; margin-top: 580px">Przesunięcia</button>
 <button style=" position:absolute; height: 35px; width: 200px; margin-left: 75px; margin-top: 640px">Kontrahenci</button>
 
-</body>
+</div>
 
