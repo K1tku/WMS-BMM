@@ -1,22 +1,75 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>MainPage</title>
-</head>
-<body>
 
-<div *ngIf="displayLogin">
-<bmm-left-menu></bmm-left-menu>
-</div>
-<div class="main-content">
-  <router-outlet></router-outlet>
+<mat-toolbar>
+  <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+  <mat-icon *ngIf="!sidenav.opened">
+    menu
+  </mat-icon>
+    <mat-icon *ngIf="sidenav.opened">
+      close
+    </mat-icon>
+  </button>
+  BMM WMS
+</mat-toolbar>
 
-</div>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav">
 
+    <button mat-button [matMenuTriggerFor]="menu">Warehouses</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>WG</button>
+      <button mat-menu-item>MAT</button>
+      <button mat-menu-item>PROD</button>
+    </mat-menu>
 
+    <mat-divider></mat-divider>
 
-</body>
-</html>
+    <button mat-button class="menu-button" routerLink="/Dashboard">
+      <mat-icon>dashboard</mat-icon>
+      <span>Dashboard</span>
+    </button>
 
+    <button mat-button class="menu-button" routerLink="/Operators">
+      <mat-icon>people</mat-icon>
+      <span>Operators</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/Warehouses">
+      <mat-icon>location_city</mat-icon>
+      <span>Warehouses</span>
+    </button>
 
+    <button mat-button class="menu-button" routerLink="/Items">
+      <mat-icon>subtitles</mat-icon>
+      <span>Articles</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/help">
+      <mat-icon>apps</mat-icon>
+      <span>Stany mag</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/Orders">
+      <mat-icon>repeat</mat-icon>
+      <span>Operations</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/Receipts">
+      <mat-icon>vertical_align_bottom</mat-icon>
+      <span>Receipts</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/Releases">
+      <mat-icon>vertical_align_top</mat-icon>
+      <span>Releases</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/Movements">
+      <mat-icon>swap_horiz</mat-icon>
+      <span>Movements</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/Customers">
+      <mat-icon>people</mat-icon>
+      <span>Customers</span>
+    </button>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z4">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

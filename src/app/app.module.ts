@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { MainPageComponent } from './Components/main-page/main-page.component';
-import { LeftMenuComponent } from './Components/left-menu/left-menu.component';
 import { LoginPageComponent } from './Components/login-page/login-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
@@ -18,6 +17,12 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSelectModule} from '@angular/material/select';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatListModule} from '@angular/material/list';
+import {MatDividerModule} from '@angular/material/divider'
+
 
 
 
@@ -26,9 +31,9 @@ import {MatSelectModule} from '@angular/material/select';
   declarations: [
     AppComponent,
     MainPageComponent,
-    LeftMenuComponent,
     LoginPageComponent,
     routingComponents
+
   ],
   imports: [
     BrowserModule,
@@ -44,8 +49,18 @@ import {MatSelectModule} from '@angular/material/select';
     MatToolbarModule,
     MatBottomSheetModule,
     MatMenuModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSlideToggleModule,
+    MatSidenavModule,
+    MatTabsModule,
+    MatListModule,
+    MatDividerModule
 
+  ],
+  exports:[
+    MatSidenavModule,
+    MatTabsModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
