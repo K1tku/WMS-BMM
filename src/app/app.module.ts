@@ -21,9 +21,9 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatListModule} from '@angular/material/list';
-import {MatDividerModule} from '@angular/material/divider'
-
-
+import {MatDividerModule} from '@angular/material/divider';
+import { FormsModule } from '@angular/forms';
+import { AddUserComponent } from './Components/operators/add-user/add-user.component';
 
 
 
@@ -32,8 +32,11 @@ import {MatDividerModule} from '@angular/material/divider'
     AppComponent,
     MainPageComponent,
     LoginPageComponent,
-    routingComponents
-
+    routingComponents,
+    AddUserComponent
+  ],
+  entryComponents:[
+   AddUserComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +57,8 @@ import {MatDividerModule} from '@angular/material/divider'
     MatSidenavModule,
     MatTabsModule,
     MatListModule,
-    MatDividerModule
+    MatDividerModule,
+    FormsModule
 
   ],
   exports:[
