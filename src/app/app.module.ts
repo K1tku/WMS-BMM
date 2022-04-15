@@ -24,6 +24,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatDividerModule} from '@angular/material/divider';
 import { FormsModule } from '@angular/forms';
 import { AddUserComponent } from './Components/operators/add-user/add-user.component';
+import {MatTableModule} from '@angular/material/table';
 
 
 
@@ -58,7 +59,8 @@ import { AddUserComponent } from './Components/operators/add-user/add-user.compo
     MatTabsModule,
     MatListModule,
     MatDividerModule,
-    FormsModule
+    FormsModule,
+    MatTableModule
 
   ],
   exports:[
