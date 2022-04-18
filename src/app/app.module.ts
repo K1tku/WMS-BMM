@@ -25,6 +25,9 @@ import {MatDividerModule} from '@angular/material/divider';
 import { FormsModule } from '@angular/forms';
 import { AddUserComponent } from './Components/operators/add-user/add-user.component';
 import {MatTableModule} from '@angular/material/table';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
+
 
 
 
@@ -60,7 +63,8 @@ import {MatTableModule} from '@angular/material/table';
     MatListModule,
     MatDividerModule,
     FormsModule,
-    MatTableModule
+    MatTableModule,
+    MatCheckboxModule
 
   ],
   exports:[
