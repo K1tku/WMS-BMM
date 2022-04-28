@@ -1,0 +1,62 @@
+.mat-tab-group {
+
+}
+.user-container{
+  height: calc(100vh - 98px);
+  margin: 16px;
+  margin-left: 32px;
+  border-radius: 10px;
+}
+
+.access-profiles-container{
+  height: calc(100vh - 98px);
+  margin: 16px;
+  margin-left: 32px;
+  border-radius: 10px;
+}
+.addButton{
+  float: right;
+  right: 5px;
+}
+.example-form{
+  float: left;
+}
+.userTable{
+  clear: both;
+}
+.mat-elevation-z8{
+  width: 100%;
+}
+
+.mat-column-edit {
+  width: 32px;
+  text-align: center;
+  font-weight: bold;
+}
+.mat-column-delete {
+  width: 32px;
+  text-align: center;
+  font-weight: bold;
+}
+.accessButton{
+  float: right;
+  right: 5px;
+}
+
+.accessTable{
+  clear: both;
+}
+.mat-bottom-sheet-container-medium {
+  min-width: 384px;
+  max-width: calc(100vw - 128px)
+}
+
+.mat-bottom-sheet-container-large {
+  min-width: 512px;
+  max-width: calc(100vw - 256px)
+}
+
+.mat-bottom-sheet-container-xlarge {
+  min-width: 576px;
+  max-width: calc(100vw - 384px)
+}

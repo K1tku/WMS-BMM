@@ -1,0 +1,16 @@
+.loginPage{
+
+  margin-left: 11%;
+
+}
+
+@media (max-width:1110px) {
+  img#Logo {
+    display: none;
+  }
+}
+@media (min-width:1110px) {
+  img#Icon {
+    display: none;
+  }
+}

@@ -1,0 +1,27 @@
+.addButton{
+  float: right;
+  right: 5px;
+  margin-right: 2%;
+  margin-top: 2%;
+}
+.example-form{
+  float: left;
+  margin-left: 2%;
+  margin-top: 1%;
+}
+.warehouses_container{
+  clear: both;
+}
+.mat-elevation-z8{
+  width: 100%;
+}
+.mat-column-edit {
+  width: 32px;
+  text-align: center;
+  font-weight: bold;
+}
+.mat-column-delete {
+  width: 32px;
+  text-align: center;
+  font-weight: bold;
+}

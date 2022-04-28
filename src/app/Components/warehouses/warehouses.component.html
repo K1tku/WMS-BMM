@@ -1,0 +1,54 @@
+<div class="topbar">
+  <form class="example-form">
+    <mat-form-field class="example-full-width" >
+      <mat-label>Search...</mat-label>
+      <input matInput placeholder="Warehouses">
+    </mat-form-field>
+  </form>
+  <div class="addButton">
+    <button mat-button >+ Add Warehouses</button>
+  </div>
+</div>
+
+<div class="warehouses_container">
+  <mat-divider></mat-divider>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    </ng-container>
+
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="capasity">
+      <th mat-header-cell *matHeaderCellDef> Capasity </th>
+      <td mat-cell *matCellDef="let element"> {{element.capasity}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="edit">
+      <th mat-header-cell  *matHeaderCellDef ></th>
+      <td mat-cell *matCellDef="let row" >
+        <button mat-button>Edit</button>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell  *matHeaderCellDef ></th>
+      <td mat-cell *matCellDef="let row" >
+        <button mat-button>Delete</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+</div>
