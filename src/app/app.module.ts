@@ -9,7 +9,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {ReactiveFormsModule} from '@angular/forms';
-import { AppRoutingModule, routingComponents } from './app-routing.module';
+import {AppRoutingModule, routingComponents } from './app-routing.module';
 import {MatIconModule} from '@angular/material/icon';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -22,10 +22,12 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatListModule} from '@angular/material/list';
 import {MatDividerModule} from '@angular/material/divider';
-import { FormsModule } from '@angular/forms';
-import { AddUserComponent } from './Components/operators/add-user/add-user.component';
+import {FormsModule } from '@angular/forms';
+import {AddUserComponent } from './Components/operators/add-user/add-user.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {ItemComponent } from './Components/items/item/item.component';
+import {ItemService} from './Components/shared/item.service';
 
 
 
@@ -37,7 +39,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MainPageComponent,
     LoginPageComponent,
     routingComponents,
-    AddUserComponent
+    AddUserComponent,
+    ItemComponent
   ],
   entryComponents:[
    AddUserComponent
@@ -72,7 +75,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatTabsModule,
     MatListModule
   ],
-  providers: [],
+  providers: [ItemService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
