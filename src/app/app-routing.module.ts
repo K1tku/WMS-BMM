@@ -12,37 +12,38 @@ import {ReceiptsComponent} from "./Components/receipts/receipts.component";
 import {ReleasesComponent} from "./Components/releases/releases.component";
 import {MovementsComponent} from "./Components/movements/movements.component";
 import {CustomersComponent} from "./Components/customers/customers.component";
+import {AuthGuard} from "./auth/auth.guard";
 
 const routes: Routes = [
   {
-    path : '', component : LoginPageComponent,
+    path : '', component : LoginPageComponent
   },
   {
-    path : 'Operators', component : OperatorsComponent
+    path : 'Operators', component : OperatorsComponent,canActivate:[AuthGuard]
   },
   {
-    path : 'Dashboard', component : DashboardComponent
+    path : 'Dashboard', component : DashboardComponent,canActivate:[AuthGuard]
   },
   {
-    path : 'Warehouses', component : WarehousesComponent
+    path : 'Warehouses', component : WarehousesComponent,canActivate:[AuthGuard]
   },
   {
-    path : 'Items', component : ItemsComponent
+    path : 'Items', component : ItemsComponent,canActivate:[AuthGuard]
   },
   {
-    path : 'Orders', component : OrdersComponent
+    path : 'Orders', component : OrdersComponent,canActivate:[AuthGuard]
   },
   {
-    path : 'Receipts', component : ReceiptsComponent
+    path : 'Receipts', component : ReceiptsComponent,canActivate:[AuthGuard]
   },
   {
-    path : 'Releases', component : ReleasesComponent
+    path : 'Releases', component : ReleasesComponent,canActivate:[AuthGuard]
   },
   {
-    path : 'Movements', component : MovementsComponent
+    path : 'Movements', component : MovementsComponent,canActivate:[AuthGuard]
   },
   {
-    path : 'Customers', component : CustomersComponent
+    path : 'Customers', component : CustomersComponent,canActivate:[AuthGuard]
   },
 
 ];

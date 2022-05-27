@@ -18,13 +18,16 @@ export class AppComponent {
   sidenav!: MatSidenav;
 
   displayLogin: boolean = false;
+  displayLoginv2: string;
 
   constructor(location: Location, private router: Router, private observer: BreakpointObserver) {
       router.events.subscribe((val) => {
         if(location.path() != ''){
           this.displayLogin = true;
+          this.displayLoginv2 = 'block';
         } else {
           this.displayLogin = false;
+          this.displayLoginv2 = 'none';
         }
 
       });
@@ -42,5 +45,9 @@ export class AppComponent {
           this.sidenav.open();
         }
       });
+  }
+  Logout(){
+    localStorage.removeItem('userToken');
+    this.router.navigate(['']);
   }
 }

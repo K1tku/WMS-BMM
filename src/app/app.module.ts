@@ -26,8 +26,14 @@ import {FormsModule } from '@angular/forms';
 import {AddUserComponent } from './Components/operators/add-user/add-user.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import {ItemComponent } from './Components/items/item/item.component';
 import {ItemService} from './Components/shared/item.service';
+import { UserComponent } from './Components/user/user.component';
+import { SignInComponent } from './Components/user/sign-in/sign-in.component';
+import {UserService} from '../../src/app/Components/shared/user.service';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {AuthGuard} from "./auth/auth.guard";
+/*import {NgbModule} from '@ng-bootstrap/ng-bootstrap';*/
+
 
 
 
@@ -40,7 +46,8 @@ import {ItemService} from './Components/shared/item.service';
     LoginPageComponent,
     routingComponents,
     AddUserComponent,
-    ItemComponent
+    UserComponent,
+    SignInComponent
   ],
   entryComponents:[
    AddUserComponent
@@ -67,7 +74,8 @@ import {ItemService} from './Components/shared/item.service';
     MatDividerModule,
     FormsModule,
     MatTableModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    HttpClientModule
 
   ],
   exports:[
@@ -75,7 +83,7 @@ import {ItemService} from './Components/shared/item.service';
     MatTabsModule,
     MatListModule
   ],
-  providers: [ItemService],
+  providers: [ItemService,UserService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

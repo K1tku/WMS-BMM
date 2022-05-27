@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router'
+import { Router, ActivatedRoute } from '@angular/router';
+import {UserService} from "../shared/user.service";
+import {HttpErrorResponse} from "@angular/common/http";
 
 
 
@@ -9,16 +11,25 @@ import {Router} from '@angular/router'
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
+isLoginError : boolean = false;
+  constructor(private userService : UserService,
+               private router : Router) { }
 
+  ngOnInit(){}
 
-  constructor(private router:Router) { }
+  OnSubmit(userName: any,password: any){
+      this.userService.userAuthentication(userName,password).subscribe((data : any)=>{
+      localStorage.setItem('userToken', data.accessToken);
+      this.router.navigate(['/Dashboard']);
+    },
+        (err: HttpErrorResponse)=>{
+        this.isLoginError = true;
+        });
 
-  goToMainPage(pageName:string):void{
-    this.router.navigate([`${pageName}`])
   }
 
-  ngOnInit(): void {
 
-  }
+
+
 
 }

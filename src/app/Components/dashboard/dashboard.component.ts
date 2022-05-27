@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {AppComponent} from '../../app.component';
+import { Router, ActivatedRoute } from '@angular/router';
+
+import { User } from '../../models/user';
+
 
 @Component({
   selector: 'bmm-dashboard',
@@ -7,7 +12,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+
+  constructor() {}
 
   ngOnInit(): void {
   }
