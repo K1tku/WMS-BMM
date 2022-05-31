@@ -1,9 +1,18 @@
 table {
   width: 100%;
 }
-mat-header-cell, mat-cell {
-  justify-content: left;
+
+.mat-form-field {
+  font-size: 14px;
+  width: 20%;
 }
-.left-text {
+
+.th-center{
+  text-align: center;
+}
+.th-left{
   text-align: left;
+}
+.th-right{
+  text-align: right;
 }

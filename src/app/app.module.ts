@@ -27,16 +27,17 @@ import {AddUserComponent } from './Components/operators/add-user/add-user.compon
 import {MatTableModule} from '@angular/material/table';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {ItemService} from './Components/shared/item.service';
-import { UserComponent } from './Components/user/user.component';
-import { SignInComponent } from './Components/user/sign-in/sign-in.component';
+import {UserComponent } from './Components/user/user.component';
+import {SignInComponent } from './Components/user/sign-in/sign-in.component';
 import {UserService} from '../../src/app/Components/shared/user.service';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {HttpClientModule } from '@angular/common/http';
 import {AuthGuard} from "./auth/auth.guard";
-/*import {NgbModule} from '@ng-bootstrap/ng-bootstrap';*/
-
-
-
-
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
+import {AddArticleComponent } from './Components/items/add-article/add-article.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { UpdateArticleComponent } from './Components/items/update-article/update-article.component';
+import { AddwarehousesComponent } from './Components/warehouses/addwarehouses/addwarehouses.component';
 
 
 @NgModule({
@@ -47,7 +48,10 @@ import {AuthGuard} from "./auth/auth.guard";
     routingComponents,
     AddUserComponent,
     UserComponent,
-    SignInComponent
+    SignInComponent,
+    AddArticleComponent,
+    UpdateArticleComponent,
+    AddwarehousesComponent
   ],
   entryComponents:[
    AddUserComponent
@@ -75,7 +79,10 @@ import {AuthGuard} from "./auth/auth.guard";
     FormsModule,
     MatTableModule,
     MatCheckboxModule,
-    HttpClientModule
+    HttpClientModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatDialogModule
 
   ],
   exports:[

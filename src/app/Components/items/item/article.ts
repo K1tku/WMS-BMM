@@ -2,9 +2,9 @@ export class Article {
   constructor(
     id: undefined,
     name: string,
-    unit: undefined,
+    unit: any,
     weight: string,
-    articleCode: undefined,
+    articleCode: string,
     creationDate: string,
     modificationDate: undefined,
     user: string
