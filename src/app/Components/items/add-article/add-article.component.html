@@ -1,34 +1,39 @@
-<h1 mat-dialog-title>Add articles</h1>
+
+<h1 mat-dialog-title>Add Articles</h1>
 
 
 
 <div mat-dialog-content>
-  <form  #addArticlesForm="ngForm" class="col s12 white" (ngSubmit)="OnSubmit(Name.value,Weight.value,ArticleCode.value)">
-  <mat-form-field appearance="outline">
-    <mat-label>Name</mat-label>
-    <input matInput type="text" #Name ngModel name="Name" placeholder="Name">
-  </mat-form-field>
-  <mat-form-field appearance="outline">
-    <mat-label>Unit</mat-label>
-    <mat-select type="string" #Unit ngModel name="unit" placeholder="Unit">
-      <mat-option value="1">Kilogramy</mat-option>
-      <mat-option value="2">Sztuki</mat-option>
-      <mat-option value="3">Litry</mat-option>
-    </mat-select>
-  </mat-form-field>
-  <mat-form-field appearance="outline">
-    <mat-label>Weight</mat-label>
-    <input matInput type="text" #Weight ngModel name="weight" placeholder="Weight">
-  </mat-form-field>
-  <mat-form-field appearance="outline">
-    <mat-label>Article Code</mat-label>
-    <input matInput type="text" #ArticleCode ngModel name="ArticleCode" placeholder="ArticleCode">
-  </mat-form-field>
-    <button mat-raised-button [disabled]="!addArticlesForm.valid"  class="btn-large btn-submit" type="submit" color="primary">Save</button>
+  <form [formGroup]="articlesForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input formControlName="name" matInput placeholder="Name">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Article Code</mat-label>
+      <input formControlName="articleCode" matInput placeholder="articleCode">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Weight</mat-label>
+      <input formControlName="weight" matInput placeholder="weight">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Unit</mat-label>
+      <mat-select formControlName="unit" matInput placeholder="unit">
+        <mat-option *ngFor="let row of Units" [value]="row.name">
+          {{row.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
   </form>
 </div>
-<div mat-dialog-action>
-  <!--<button mat-raised-button color="warn" mat-dialog-close>Close</button>-->
 
-
+<div mat-dialog-action [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+  <button style="margin-left: 8px" mat-raised-button color="primary" (click)="addArticles()">{{actionBtn}}</button>
 </div>
+

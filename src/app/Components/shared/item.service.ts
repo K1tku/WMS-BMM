@@ -1,20 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable} from 'rxjs';
-import {Article} from "../items/item/article";
-
-
-/*export interface articles {
-  id: number,
-  name: string,
-  unit: string,
-  weight: string,
-  articleCode: string,
-  creationDate: string,
-  modificationDate: string,
-  user: string
-}*/
+import {Observable} from "rxjs";
 
 
 @Injectable({
@@ -23,29 +9,38 @@ import {Article} from "../items/item/article";
 export class ItemService {
 
   readonly rootUrl = 'http://localhost:8080';
-  constructor(private http: HttpClient) { }
 
+  constructor(private http: HttpClient) {
+  }
 
-  getArticles(): Observable<Article[]>{
-    return this.http.get<Article[]>(this.rootUrl+'/api/articles'
-      , {headers : new HttpHeaders({'Authorization':'Bearer '+localStorage.getItem('userToken')})} );
+  postArticles(data: any) {
+    var headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('userToken')});
+    return this.http.post<any>(this.rootUrl + '/api/articles/', data, {headers: headers});
+  }
+
+  getArticles() {
+    var headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('userToken')});
+    return this.http.get<any>(this.rootUrl + '/api/articles/', {headers: headers});
+  }
+
+  putArticles(data:any, id : number){
+    var headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('userToken')});
+    return this.http.put<any>(this.rootUrl + '/api/articles/' + id , data, {headers: headers});
+  }
+
+  deleteArticles(id:number){
+    var headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('userToken')});
+    return this.http.delete<any>(this.rootUrl + '/api/articles/' + id , {headers: headers});
   }
 
 
-
-  addArticles( name: string,
-              /* unit: undefined, */
-               weight: string,
-               articleCode: string) {
-    var data = "{" + '"' + "name"  + '"' +":" +'"'+ name + '",'
-      + '"' +"articleCode"  + '"' +":" +'"'+ articleCode +'",'
-    /*  + '"' +"unit"  + '"' +":" +'"'+ unit +'",'+*/
-      +'"' +"weight"  + '"' +":" + weight +"}";
-    var reqHeader = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization':'Bearer '+localStorage.getItem('userToken')
-    });
-    return this.http.post(this.rootUrl + '/api/articles', data, { headers: reqHeader });
+  getUnits(): Observable<any> {
+    var headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('userToken')});
+    return this.http.get <any>(this.rootUrl + '/api/units/', {headers: headers});
   }
 
+  putUnits(datas:any){
+    var headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('userToken')});
+    return this.http.put<any>(this.rootUrl + '/api/articles/add-unit-to-article',  datas, {headers: headers});
+  }
 }

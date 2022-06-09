@@ -36,7 +36,6 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {AddArticleComponent } from './Components/items/add-article/add-article.component';
 import {MatDialogModule} from '@angular/material/dialog';
-import { UpdateArticleComponent } from './Components/items/update-article/update-article.component';
 import { AddwarehousesComponent } from './Components/warehouses/addwarehouses/addwarehouses.component';
 
 
@@ -50,7 +49,6 @@ import { AddwarehousesComponent } from './Components/warehouses/addwarehouses/ad
     UserComponent,
     SignInComponent,
     AddArticleComponent,
-    UpdateArticleComponent,
     AddwarehousesComponent
   ],
   entryComponents:[

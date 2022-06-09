@@ -1,7 +1,9 @@
-import {Component, Inject, OnInit} from '@angular/core';
-import {ItemService} from '../../shared/item.service';
-import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import {Article} from '../../items/item/article';
+import { Component, OnInit, Inject } from '@angular/core';
+import {FormGroup, FormBuilder, Validators} from "@angular/forms";
+import {ItemService} from "../../shared/item.service";
+import {MatDialogRef, MAT_DIALOG_DATA} from "@angular/material/dialog";
+import {WarehousesService} from "../../shared/warehouses-service";
+
 
 @Component({
   selector: 'bmm-add-article',
@@ -9,30 +11,80 @@ import {Article} from '../../items/item/article';
   styleUrls: ['./add-article.component.css']
 })
 export class AddArticleComponent implements OnInit {
-  unit: any;
-  weight: any;
 
-  constructor(private itemService: ItemService,
-              @Inject(MAT_DIALOG_DATA) public editArticle: any) {
+  articlesForm !: FormGroup;
+  actionBtn: string = "Save";
 
-
+  constructor(private formBuilder: FormBuilder
+    , private itemService: ItemService
+    , private dialogRef: MatDialogRef<AddArticleComponent>
+    , @Inject(MAT_DIALOG_DATA) public editData: any) {
   }
 
-  OnSubmit(name: string,
-          /* unit: any,*/
-           weight: string,
-           articleCode: string
-  ) {
-    this.itemService.addArticles(name,weight,articleCode).subscribe((data: any) => {
-        console.log(data)
-      }
-
-    )
-  };
-
+  Units: any;
 
 
   ngOnInit(): void {
+    this.articlesForm = this.formBuilder.group({
+      name: ['', Validators.required],
+      articleCode: ['', Validators.required],
+      weight: ['', Validators.required],
+      unit: ['', Validators.required]
+    })
+
+
+    if (this.editData) {
+      this.actionBtn = "Update";
+      this.articlesForm.controls['name'].setValue(this.editData.name);
+      this.articlesForm.controls['articleCode'].setValue(this.editData.articleCode);
+      this.articlesForm.controls['weight'].setValue(this.editData.weight);
+      this.articlesForm.controls['unit'].setValue(this.editData.unit);
+    }
+
+   this.itemService.getUnits().subscribe((data:any)=> {
+      this.Units = data;
+    })
   }
+
+  addArticles() {
+    if (!this.editData) {
+      if (this.articlesForm.valid) {
+        this.itemService.postArticles(this.articlesForm.value)
+          .subscribe({
+            next: (res) => {
+              alert("Articles added successfully")
+              this.articlesForm.reset();
+              this.dialogRef.close('save');
+            },
+            error: () => {
+              alert("Error while adding articles")
+            }
+          })
+        /*this.itemService.putUnits(this.articlesForm.value)
+          .subscribe({
+            next: (res) => {
+              this.articlesForm.reset();
+              this.dialogRef.close('save');
+            }
+          })*/
+      }
+    } else {
+      this.updateArticles()
+    }
+  }
+  updateArticles(){
+    this.itemService.putArticles(this.articlesForm.value,this.editData.id)
+      .subscribe({
+        next:(res)=>{
+          alert("Articles updated Successfully")
+          this.articlesForm.reset();
+          this.dialogRef.close('update');
+        },
+        error:()=>{
+          alert("Error while updating the record!")
+        }
+      })
+  }
+
 
 }

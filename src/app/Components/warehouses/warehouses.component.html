@@ -14,28 +14,28 @@
     <div class="mat-elevation-z8">
       <table mat-table [dataSource]="dataSource" matSort>
 
-        <!-- ID Column -->
+
         <ng-container matColumnDef="name">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
           <td mat-cell *matCellDef="let row"> {{row.name}} </td>
         </ng-container>
 
-        <!-- Progress Column -->
+
         <ng-container matColumnDef="displayName">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Display Name </th>
           <td mat-cell *matCellDef="let row"> {{row.displayName}} </td>
         </ng-container>
 
-        <!-- Name Column -->
+
         <ng-container matColumnDef="creationDate">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Creation Date </th>
-          <td mat-cell *matCellDef="let row"> {{row.creationDate | date}} </td>
+          <td mat-cell *matCellDef="let row"> {{row.creationDate}} </td>
         </ng-container>
 
-        <!-- Fruit Column -->
+
         <ng-container matColumnDef="modificationDate">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Modification Date </th>
-          <td mat-cell *matCellDef="let row"> {{row.modificationDate | date}} </td>
+          <td mat-cell *matCellDef="let row"> {{row.modificationDate }} </td>
         </ng-container>
 
         <ng-container matColumnDef="capacity">
@@ -43,13 +43,13 @@
           <td mat-cell *matCellDef="let row"> {{row.capacity}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="action">
+        <ng-container matColumnDef="action" class="actionicon">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
           <td mat-cell *matCellDef="let row">
-            <button mat-icon-button (click)="editWarehouses(row)" color="primary">
+            <button mat-icon-button (click)="editWarehouses(row)">
               <mat-icon>edit</mat-icon>
             </button>
-          <button mat-icon-button (click)="deleteWarehouses(row.id)" color="warn">
+          <button mat-icon-button (click)="deleteWarehouses(row.id)">
             <mat-icon>delete</mat-icon>
           </button>
           </td>

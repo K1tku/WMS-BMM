@@ -1,12 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {AddwarehousesComponent} from "./addwarehouses/addwarehouses.component";
-import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule, MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatSortModule, MatSort} from '@angular/material/sort';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {WarehousesService} from "../shared/warehouses-service";
-import {MatDialogRef} from "@angular/material/dialog";
 
 
 @Component({
