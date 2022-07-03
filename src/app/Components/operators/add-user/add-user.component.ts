@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import {MatBottomSheet, MatBottomSheetRef} from '@angular/material/bottom-sheet';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormGroup, FormBuilder, Validators} from "@angular/forms";
+import {UserService} from "../../shared/user.service";
+import {MatDialogRef, MAT_DIALOG_DATA} from "@angular/material/dialog";
+
 
 @Component({
   selector: 'bmm-add-user',
@@ -9,20 +12,70 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 })
 export class AddUserComponent implements OnInit {
 
-  toppings: FormGroup;
+  usersForm !: FormGroup;
+  actionBtn: string = "Save";
 
 
-  constructor(private _bottomSheetRef: MatBottomSheetRef<AddUserComponent>,fb: FormBuilder) {
-    this.toppings = fb.group({
-      account_is_dislable: false,
-      must_change_password: false,
-    });
+  constructor(private formBuilder: FormBuilder
+    , private userService: UserService
+    , private dialogRef: MatDialogRef<AddUserComponent>
+    , @Inject(MAT_DIALOG_DATA) public editData: any) {
+
   }
 
-  name_value = 'User Name';
-  lastname_value = 'User Last Name';
 
   ngOnInit(): void {
+    this.usersForm = this.formBuilder.group({
+      name: ['', Validators.required],
+      surname: ['', Validators.required],
+      username: ['', Validators.required],
+      password: ['', Validators.required]
+    })
+
+
+    if (this.editData) {
+      this.actionBtn = "Update";
+      this.usersForm.controls['name'].setValue(this.editData.name);
+      this.usersForm.controls['surname'].setValue(this.editData.surname);
+      this.usersForm.controls['username'].setValue(this.editData.username);
+      this.usersForm.controls['password'].setValue(this.editData.password);
+    }
+
   }
 
+  addUsers() {
+    if (!this.editData) {
+      if (this.usersForm.valid) {
+        this.userService.postUsers(this.usersForm.value)
+          .subscribe({
+            next: (res) => {
+              alert("User added successfully")
+              this.usersForm.reset();
+              this.dialogRef.close('save');
+            },
+            error: () => {
+              alert("Error while adding User")
+            }
+          })
+
+      }
+
+    } else {
+      this.updateUsers()
+    }
+  }
+
+  updateUsers() {
+    this.userService.putUsers(this.usersForm.value, this.editData.id)
+      .subscribe({
+        next: (res) => {
+          alert("Users updated Successfully")
+          this.usersForm.reset();
+          this.dialogRef.close('update');
+        },
+        error: () => {
+          alert("Error while updating the record!")
+        }
+      })
+  }
 }

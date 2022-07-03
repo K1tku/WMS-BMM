@@ -1,39 +1,33 @@
-<h4>Add new User</h4>
-<div class="add_user">
-  <div class="name">
-<mat-form-field class="example-form-field" appearance="fill">
-  <mat-label>Name</mat-label>
-  <input matInput type="text" [(ngModel)]="name_value">
-  <button *ngIf="name_value" matSuffix mat-icon-button aria-label="Clear" (click)="name_value=''">
-    <mat-icon>close</mat-icon>
-  </button>
-</mat-form-field>
-  </div>
-  <div class="lastName">
-<mat-form-field class="example-form-field" appearance="fill">
-  <mat-label>Last Name</mat-label>
-  <input matInput type="text" [(ngModel)]="lastname_value">
-  <button *ngIf="lastname_value" matSuffix mat-icon-button aria-label="Clear" (click)="lastname_value=''">
-    <mat-icon>close</mat-icon>
-  </button>
-</mat-form-field>
-  </div>
-  <div class="access_profiles">
-  <button mat-raised-button [matMenuTriggerFor]="menu">Access Profile</button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item>Menager</button>
-    <button mat-menu-item>Worker</button>
-  </mat-menu>
-    <button mat-raised-button style="margin-left: 5%">Change Password</button>
-  </div>
-  <div class="checkbox">
-  <section class="example-section" [formGroup]="toppings">
-    <p><mat-checkbox formControlName="account_is_dislable">Account is dislable</mat-checkbox></p>
-    <p><mat-checkbox formControlName="must_change_password">User must change password at next login</mat-checkbox></p>
-  </section>
-  </div>
-  <div class="save">
-    <button mat-raised-button>Save</button>
+<h1 mat-dialog-title>Add Users</h1>
 
-  </div>
+
+
+<div mat-dialog-content>
+  <form [formGroup]="usersForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input formControlName="name" matInput placeholder="Name">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Surname</mat-label>
+      <input formControlName="surname" matInput placeholder="surname">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Username</mat-label>
+      <input formControlName="username" matInput placeholder="username">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input formControlName="password" matInput placeholder="password">
+    </mat-form-field>
+
+  </form>
+</div>
+
+<div mat-dialog-action [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+  <button style="margin-left: 8px" mat-raised-button color="primary" (click)="addUsers()">{{actionBtn}}</button>
 </div>

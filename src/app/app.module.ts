@@ -37,6 +37,7 @@ import {MatSortModule} from '@angular/material/sort';
 import {AddArticleComponent } from './Components/items/add-article/add-article.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { AddwarehousesComponent } from './Components/warehouses/addwarehouses/addwarehouses.component';
+import { AddCustomerComponent } from './Components/customers/add-customer/add-customer.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { AddwarehousesComponent } from './Components/warehouses/addwarehouses/ad
     UserComponent,
     SignInComponent,
     AddArticleComponent,
-    AddwarehousesComponent
+    AddwarehousesComponent,
+    AddCustomerComponent
   ],
   entryComponents:[
    AddUserComponent

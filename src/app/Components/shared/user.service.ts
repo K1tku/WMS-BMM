@@ -37,4 +37,19 @@ export class UserService {
     return this.http.get<any>(this.rootUrl + '/api/users', {headers: headers});
   }
 
+  putUsers(data:any, id : number){
+    var headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('userToken')});
+    return this.http.put<any>(this.rootUrl + '/api/users/' + id , data, {headers: headers});
+  }
+
+  deleteUsers(id:number){
+    var headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('userToken')});
+    return this.http.delete<any>(this.rootUrl + '/api/users/' + id , {headers: headers});
+  }
+
+  postUsers(data: any) {
+    var headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('userToken')});
+    return this.http.post<any>(this.rootUrl + '/api/users/', data, {headers: headers});
+  }
+
 }
