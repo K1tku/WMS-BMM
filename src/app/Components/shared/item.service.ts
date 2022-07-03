@@ -39,8 +39,8 @@ export class ItemService {
     return this.http.get <any>(this.rootUrl + '/api/units/', {headers: headers});
   }
 
-  putUnits(datas:any){
+  putUnits(data:any){
     var headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('userToken')});
-    return this.http.put<any>(this.rootUrl + '/api/articles/add-unit-to-article',  datas, {headers: headers});
+    return this.http.put<any>(this.rootUrl + '/api/articles/add-unit-to-article/',  data, {headers: headers});
   }
 }

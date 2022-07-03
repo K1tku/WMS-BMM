@@ -27,9 +27,14 @@ export class UserService {
     return this.http.post(this.rootUrl + '/api/login', data, { headers: reqHeader });
   }
 
-  getUsers(): Observable<users[]>{
+  /*getUsers(): Observable<users[]>{
     return this.http.get<users[]>(this.rootUrl+'/api/users'
       , {headers : new HttpHeaders({'Authorization':'Bearer '+localStorage.getItem('userToken')})} );
+  }*/
+
+  getUsers() {
+    var headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('userToken')});
+    return this.http.get<any>(this.rootUrl + '/api/users', {headers: headers});
   }
 
 }

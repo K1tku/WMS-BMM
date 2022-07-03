@@ -29,7 +29,7 @@ export class AddArticleComponent implements OnInit {
       name: ['', Validators.required],
       articleCode: ['', Validators.required],
       weight: ['', Validators.required],
-      unit: ['', Validators.required]
+      unitName: ['', Validators.required]
     })
 
 
@@ -38,7 +38,7 @@ export class AddArticleComponent implements OnInit {
       this.articlesForm.controls['name'].setValue(this.editData.name);
       this.articlesForm.controls['articleCode'].setValue(this.editData.articleCode);
       this.articlesForm.controls['weight'].setValue(this.editData.weight);
-      this.articlesForm.controls['unit'].setValue(this.editData.unit);
+      this.articlesForm.controls['unitName'].setValue(this.editData.unit);
     }
 
    this.itemService.getUnits().subscribe((data:any)=> {
@@ -52,6 +52,14 @@ export class AddArticleComponent implements OnInit {
         this.itemService.postArticles(this.articlesForm.value)
           .subscribe({
             next: (res) => {
+              //Dodanie unit do danej pozycji
+              this.itemService.putUnits(this.articlesForm.value)
+                .subscribe({
+                  next: (res) => {
+                    /*this.articlesForm.reset();
+                    this.dialogRef.close('save');*/
+                  }
+                })
               alert("Articles added successfully")
               this.articlesForm.reset();
               this.dialogRef.close('save');
@@ -60,14 +68,9 @@ export class AddArticleComponent implements OnInit {
               alert("Error while adding articles")
             }
           })
-        /*this.itemService.putUnits(this.articlesForm.value)
-          .subscribe({
-            next: (res) => {
-              this.articlesForm.reset();
-              this.dialogRef.close('save');
-            }
-          })*/
+
       }
+
     } else {
       this.updateArticles()
     }
@@ -76,6 +79,14 @@ export class AddArticleComponent implements OnInit {
     this.itemService.putArticles(this.articlesForm.value,this.editData.id)
       .subscribe({
         next:(res)=>{
+          //Dodanie unit do danej pozycji
+          this.itemService.putUnits(this.articlesForm.value)
+            .subscribe({
+              next: (res) => {
+                /*this.articlesForm.reset();
+                this.dialogRef.close('save');*/
+              }
+            })
           alert("Articles updated Successfully")
           this.articlesForm.reset();
           this.dialogRef.close('update');

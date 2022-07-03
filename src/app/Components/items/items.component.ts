@@ -15,7 +15,7 @@ import {AddArticleComponent} from "./add-article/add-article.component";
 })
 export class ItemsComponent implements OnInit {
 
-  displayedColumns: string[] = ['name','articleCode', 'weight', 'unit', 'creationDate', 'modificationDate', 'user', 'action'];
+  displayedColumns: string[] = ['name','articleCode', 'weight', 'unitName', 'creationDate', 'modificationDate', 'user', 'action'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
