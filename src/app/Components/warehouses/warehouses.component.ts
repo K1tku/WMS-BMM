@@ -5,6 +5,7 @@ import {MatTableDataSource} from '@angular/material/table';
 import {MatSortModule, MatSort} from '@angular/material/sort';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {WarehousesService} from "../shared/warehouses-service";
+import {WarehousesLocalizationsComponent} from "./warehouses-localizations/warehouses-localizations.component";
 
 
 @Component({
@@ -14,8 +15,10 @@ import {WarehousesService} from "../shared/warehouses-service";
 })
 export class WarehousesComponent implements OnInit {
 
-  displayedColumns: string[] = ['name', 'displayName', 'creationDate', 'modificationDate', 'capacity', 'action'];
+  displayedColumns: string[] = ['name', 'displayName', 'creationDate', 'modificationDate', 'capacity', 'localization', 'action'];
   dataSource!: MatTableDataSource<any>;
+
+
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -30,6 +33,18 @@ export class WarehousesComponent implements OnInit {
     this.dialog.open(AddwarehousesComponent, {
       width: '30%'
     }).afterClosed().subscribe(val=>{
+      if(val ==='save'){
+        this.getAllWarehouses();
+      }
+    })
+  }
+
+  openLocalizations(id: any){
+    localStorage.setItem('WarehouseID', id)
+    this.dialog.open(WarehousesLocalizationsComponent, {
+      width: '80%'
+    }).afterClosed().subscribe(val=>{
+      //localStorage.setItem('Warehouses-ID', id)
       if(val ==='save'){
         this.getAllWarehouses();
       }

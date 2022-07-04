@@ -38,6 +38,12 @@ import {AddArticleComponent } from './Components/items/add-article/add-article.c
 import {MatDialogModule} from '@angular/material/dialog';
 import { AddwarehousesComponent } from './Components/warehouses/addwarehouses/addwarehouses.component';
 import { AddCustomerComponent } from './Components/customers/add-customer/add-customer.component';
+import { WarehousesLocalizationsComponent } from './Components/warehouses/warehouses-localizations/warehouses-localizations.component';
+import { RowsComponent } from './Components/warehouses/warehouses-localizations/rows/rows.component';
+import { RacksComponent } from './Components/warehouses/warehouses-localizations/racks/racks.component';
+import { LevelsComponent } from './Components/warehouses/warehouses-localizations/levels/levels.component';
+import { PlacesComponent } from './Components/warehouses/warehouses-localizations/places/places.component';
+import { AddLocalizationComponent } from './Components/warehouses/warehouses-localizations/add-localization/add-localization.component';
 
 
 @NgModule({
@@ -51,7 +57,13 @@ import { AddCustomerComponent } from './Components/customers/add-customer/add-cu
     SignInComponent,
     AddArticleComponent,
     AddwarehousesComponent,
-    AddCustomerComponent
+    AddCustomerComponent,
+    WarehousesLocalizationsComponent,
+    RowsComponent,
+    RacksComponent,
+    LevelsComponent,
+    PlacesComponent,
+    AddLocalizationComponent
   ],
   entryComponents:[
    AddUserComponent

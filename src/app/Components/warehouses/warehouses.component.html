@@ -43,6 +43,15 @@
           <td mat-cell *matCellDef="let row"> {{row.capacity}} </td>
         </ng-container>
 
+        <ng-container matColumnDef="localization" class="actionicon">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Localization </th>
+          <td mat-cell *matCellDef="let row">
+            <button mat-icon-button (click)="openLocalizations(row.id)">
+              <mat-icon>apps</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
         <ng-container matColumnDef="action" class="actionicon">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
           <td mat-cell *matCellDef="let row">
