@@ -44,6 +44,8 @@ import { RacksComponent } from './Components/warehouses/warehouses-localizations
 import { LevelsComponent } from './Components/warehouses/warehouses-localizations/levels/levels.component';
 import { PlacesComponent } from './Components/warehouses/warehouses-localizations/places/places.component';
 import { AddLocalizationComponent } from './Components/warehouses/warehouses-localizations/add-localization/add-localization.component';
+import { AddReceiptsComponent } from './Components/receipts/add-receipts/add-receipts.component';
+import { AddReceiptsElementsComponent } from './Components/receipts/add-receipts/add-receipts-elements/add-receipts-elements.component';
 
 
 @NgModule({
@@ -63,7 +65,9 @@ import { AddLocalizationComponent } from './Components/warehouses/warehouses-loc
     RacksComponent,
     LevelsComponent,
     PlacesComponent,
-    AddLocalizationComponent
+    AddLocalizationComponent,
+    AddReceiptsComponent,
+    AddReceiptsElementsComponent
   ],
   entryComponents:[
    AddUserComponent

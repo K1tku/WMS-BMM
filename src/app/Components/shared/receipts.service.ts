@@ -6,7 +6,7 @@ import {Observable} from "rxjs";
 @Injectable({
   providedIn: 'root'
 })
-export class receiptsService {
+export class ReceiptsService {
 
   readonly rootUrl = 'http://localhost:8080';
 
@@ -15,7 +15,7 @@ export class receiptsService {
 
   postReceipts(data: any) {
     var headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('userToken')});
-    return this.http.post<any>(this.rootUrl + '/api/receipts', data, {headers: headers});
+    return this.http.post<any>(this.rootUrl + '/api/receipts/', data, {headers: headers});
   }
 
   getReceipts() {
@@ -25,12 +25,56 @@ export class receiptsService {
 
   putReceipts(data:any, id : number){
     var headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('userToken')});
-    return this.http.put<any>(this.rootUrl + '/api/receipts' + id , data, {headers: headers});
+    return this.http.put<any>(this.rootUrl + '/api/receipts/' + id , data, {headers: headers});
   }
 
   deleteReceipts(id:number){
     var headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('userToken')});
-    return this.http.delete<any>(this.rootUrl + '/api/receipts' + id , {headers: headers});
+    return this.http.delete<any>(this.rootUrl + '/api/receipts/' + id , {headers: headers});
   }
+
+  putWarehouses(data:any){
+    var headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('userToken')});
+    return this.http.put<any>(this.rootUrl + '/api/receipts/add-warehouse-to-receipt',  data, {headers: headers});
+  }
+
+  putCustomer(data:any){
+    var headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('userToken')});
+    return this.http.put<any>(this.rootUrl + '/api/receipts/add-customer-to-receipt',  data, {headers: headers});
+  }
+
+
+  // ELEMENTY -------------------------------------------
+
+  postReceiptsElements(data: any) {
+    var headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('userToken')});
+    return this.http.post<any>(this.rootUrl + '/api/receiptElements', data, {headers: headers});
+  }
+
+  getReceiptsElements() {
+    var headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('userToken')});
+    return this.http.get<any>(this.rootUrl + '/api/receiptElements', {headers: headers});
+  }
+
+  putOperation(data:any){
+    var headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('userToken')});
+    return this.http.put<any>(this.rootUrl + '/api/receiptElements/add-operation-to-receiptElement',  data, {headers: headers});
+  }
+
+  putWarehouseElem(data:any){
+    var headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('userToken')});
+    return this.http.put<any>(this.rootUrl + '/api/receiptElements/add-warehouse-to-receiptElement',  data, {headers: headers});
+  }
+
+  putLocalization(data:any){
+    var headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('userToken')});
+    return this.http.put<any>(this.rootUrl + '/api/receiptElements/add-localization-to-receiptElement',  data, {headers: headers});
+  }
+
+  putArticle(data:any){
+    var headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('userToken')});
+    return this.http.put<any>(this.rootUrl + '/api/receiptElements/add-article-to-receiptElement',  data, {headers: headers});
+  }
+
 
 }
