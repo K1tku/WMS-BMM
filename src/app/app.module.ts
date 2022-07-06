@@ -46,6 +46,10 @@ import { PlacesComponent } from './Components/warehouses/warehouses-localization
 import { AddLocalizationComponent } from './Components/warehouses/warehouses-localizations/add-localization/add-localization.component';
 import { AddReceiptsComponent } from './Components/receipts/add-receipts/add-receipts.component';
 import { AddReceiptsElementsComponent } from './Components/receipts/add-receipts/add-receipts-elements/add-receipts-elements.component';
+import { AddReleasesComponent } from './Components/releases/add-releases/add-releases.component';
+import { AddReleasesElementsComponent } from './Components/releases/add-releases/add-releases-elements/add-releases-elements.component';
+import { AddMovementsComponent } from './Components/movements/add-movements/add-movements.component';
+import { AddMovementsElementsComponent } from './Components/movements/add-movements/add-movements-elements/add-movements-elements.component';
 
 
 @NgModule({
@@ -67,7 +71,11 @@ import { AddReceiptsElementsComponent } from './Components/receipts/add-receipts
     PlacesComponent,
     AddLocalizationComponent,
     AddReceiptsComponent,
-    AddReceiptsElementsComponent
+    AddReceiptsElementsComponent,
+    AddReleasesComponent,
+    AddReleasesElementsComponent,
+    AddMovementsComponent,
+    AddMovementsElementsComponent
   ],
   entryComponents:[
    AddUserComponent

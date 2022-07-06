@@ -1,0 +1,48 @@
+<h1 mat-dialog-title>Add Elements</h1>
+
+
+
+<div mat-dialog-content>
+  <form [formGroup]="movementsElementsForm">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Article</mat-label>
+      <mat-select formControlName="articleId" matInput placeholder="articleId">
+        <mat-option *ngFor="let row of Articles" [value]="row.id">
+          {{row.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Quantity</mat-label>
+      <input formControlName="quantity" matInput placeholder="quantity">
+    </mat-form-field>
+
+
+
+    <mat-form-field appearance="outline">
+      <mat-label>Localization</mat-label>
+      <mat-select formControlName="sourceLocalizationId" matInput placeholder="sourceLocalizationId">
+        <mat-option *ngFor="let row of Localizations" [value]="row.id">
+          {{row.displayName}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Target Localization Id</mat-label>
+      <mat-select formControlName="targetLocalizationId" matInput placeholder="targetLocalizationId">
+        <mat-option *ngFor="let row of Localizations" [value]="row.id">
+          {{row.displayName}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </form>
+</div>
+
+<div mat-dialog-action [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+  <button style="margin-left: 8px" mat-raised-button color="primary" (click)="addMovementsElements()">{{actionBtn}}</button>
+</div>
