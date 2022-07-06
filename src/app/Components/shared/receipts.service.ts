@@ -56,6 +56,11 @@ export class ReceiptsService {
     return this.http.get<any>(this.rootUrl + '/api/receiptElements', {headers: headers});
   }
 
+  putReceiptsElements(data:any, id : number){
+    var headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('userToken')});
+    return this.http.put<any>(this.rootUrl + '/api/receiptElements/' + id , data, {headers: headers});
+  }
+
   putOperation(data:any){
     var headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('userToken')});
     return this.http.put<any>(this.rootUrl + '/api/receiptElements/add-operation-to-receiptElement',  data, {headers: headers});
@@ -74,6 +79,11 @@ export class ReceiptsService {
   putArticle(data:any){
     var headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('userToken')});
     return this.http.put<any>(this.rootUrl + '/api/receiptElements/add-article-to-receiptElement',  data, {headers: headers});
+  }
+
+  getArticleWeight(id:number) {
+    var headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('userToken')});
+    return this.http.get<any>(this.rootUrl + '/api/articles/' + id, {headers: headers});
   }
 
 
