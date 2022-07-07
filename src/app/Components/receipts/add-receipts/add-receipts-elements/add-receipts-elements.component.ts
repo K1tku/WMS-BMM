@@ -46,14 +46,16 @@ export class AddReceiptsElementsComponent implements OnInit {
       articleId: ['']
 
     })
+    this.ViewChild();
 
-    this.warehousesLocalizationService.getLocalizations().subscribe((data: any) => {
+    this.warehousesLocalizationService.getLocalizationsWarehouse(this.idWarehouseForm.value.warehouseId).subscribe((data: any) => {
       this.Localizations = data;
     })
 
     this.itemService.getArticles().subscribe((data: any) => {
       this.Articles = data;
     })
+
 
   }
 
@@ -78,7 +80,7 @@ export class AddReceiptsElementsComponent implements OnInit {
               this.receiptsElementsForm.reset();
               this.dialogRef.close('save');
 
-              this.ViewChild();
+              /*this.ViewChild();*/
               setTimeout(()=>{
               this.putOperationID();
               }, 80);

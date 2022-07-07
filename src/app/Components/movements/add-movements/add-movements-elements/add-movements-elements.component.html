@@ -24,7 +24,7 @@
     <mat-form-field appearance="outline">
       <mat-label>Localization</mat-label>
       <mat-select formControlName="sourceLocalizationId" matInput placeholder="sourceLocalizationId">
-        <mat-option *ngFor="let row of Localizations" [value]="row.id">
+        <mat-option *ngFor="let row of SourceLocalizations" [value]="row.id">
           {{row.displayName}}
         </mat-option>
       </mat-select>
@@ -33,7 +33,7 @@
     <mat-form-field appearance="outline">
       <mat-label>Target Localization Id</mat-label>
       <mat-select formControlName="targetLocalizationId" matInput placeholder="targetLocalizationId">
-        <mat-option *ngFor="let row of Localizations" [value]="row.id">
+        <mat-option *ngFor="let row of TargetLocalizations" [value]="row.id">
           {{row.displayName}}
         </mat-option>
       </mat-select>

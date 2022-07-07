@@ -44,8 +44,9 @@ export class AddReleasesElementsComponent implements OnInit {
       articleId: ['']
 
     })
+    this.ViewChild();
 
-    this.warehousesLocalizationService.getLocalizations().subscribe((data: any) => {
+    this.warehousesLocalizationService.getLocalizationsWarehouse(this.idWarehouseForm.value.warehouseId).subscribe((data: any) => {
       this.Localizations = data;
     })
 
@@ -76,7 +77,7 @@ export class AddReleasesElementsComponent implements OnInit {
               this.releaseElementsForm.reset();
               this.dialogRef.close('save');
 
-              this.ViewChild();
+
               setTimeout(()=>{
                 this.putOperationID();
               }, 80);

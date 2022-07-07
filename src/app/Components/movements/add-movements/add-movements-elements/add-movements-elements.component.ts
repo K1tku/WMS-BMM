@@ -33,7 +33,8 @@ export class AddMovementsElementsComponent implements OnInit {
     , private dialogRef: MatDialogRef<AddMovementsElementsComponent>
     , @Inject(MAT_DIALOG_DATA) public editData: any) { }
 
-  Localizations: any;
+  SourceLocalizations: any;
+  TargetLocalizations: any;
   Articles: any;
 
   ngOnInit(): void {
@@ -47,9 +48,14 @@ export class AddMovementsElementsComponent implements OnInit {
       articleId: ['']
 
     })
+    this.ViewChild();
 
-    this.warehousesLocalizationService.getLocalizations().subscribe((data: any) => {
-      this.Localizations = data;
+    this.warehousesLocalizationService.getLocalizationsWarehouse(this.idWarehouseForm.value.warehouseId).subscribe((data: any) => {
+      this.SourceLocalizations = data;
+    })
+
+    this.warehousesLocalizationService.getLocalizationsWarehouse(this.idTargetWarehouseForm.value.warehouseId).subscribe((data: any) => {
+      this.TargetLocalizations = data;
     })
 
     this.itemService.getArticles().subscribe((data: any) => {
