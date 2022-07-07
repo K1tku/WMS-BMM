@@ -56,10 +56,15 @@ export class MovementsService {
     return this.http.post<any>(this.rootUrl + '/api/movementElements/', data, {headers: headers});
   }
 
-  getMovementElements() {
+  getMovementsElements(id: number) {
+    var headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('userToken')});
+    return this.http.get<any>(this.rootUrl + '/api/movementElements/operationId/' + id, {headers: headers});
+  }
+
+  /*getMovementElements() {
     var headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('userToken')});
     return this.http.get<any>(this.rootUrl + '/api/movementElements', {headers: headers});
-  }
+  }*/
 
   putMovementElements(data:any, id : number){
     var headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('userToken')});

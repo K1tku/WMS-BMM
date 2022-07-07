@@ -22,6 +22,11 @@ export class WarehousesLocalizationService {
     return this.http.put<any>(this.rootUrl + '/api/localizations/add-warehouse-to-localization/', data, {headers: headers});
   }
 
+  getLocalizationsWarehouse(id:number){
+    var headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('userToken')});
+    return this.http.get<any>(this.rootUrl + '/api/localizations/warehouseId/' + id , {headers: headers});
+  }
+
   postLocalizations(data: any) {
     var headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('userToken')});
     return this.http.post<any>(this.rootUrl + '/api/localizations/', data, {headers: headers});

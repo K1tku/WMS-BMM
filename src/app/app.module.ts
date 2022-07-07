@@ -50,6 +50,9 @@ import { AddReleasesComponent } from './Components/releases/add-releases/add-rel
 import { AddReleasesElementsComponent } from './Components/releases/add-releases/add-releases-elements/add-releases-elements.component';
 import { AddMovementsComponent } from './Components/movements/add-movements/add-movements.component';
 import { AddMovementsElementsComponent } from './Components/movements/add-movements/add-movements-elements/add-movements-elements.component';
+import { ReleasesElementsComponent } from './Components/releases/releases-elements/releases-elements.component';
+import { MovementsElementsComponent } from './Components/movements/movements-elements/movements-elements.component';
+import { ReceiptsElementsComponent } from './Components/receipts/receipts-elements/receipts-elements.component';
 
 
 @NgModule({
@@ -75,7 +78,10 @@ import { AddMovementsElementsComponent } from './Components/movements/add-moveme
     AddReleasesComponent,
     AddReleasesElementsComponent,
     AddMovementsComponent,
-    AddMovementsElementsComponent
+    AddMovementsElementsComponent,
+    ReleasesElementsComponent,
+    MovementsElementsComponent,
+    ReceiptsElementsComponent
   ],
   entryComponents:[
    AddUserComponent

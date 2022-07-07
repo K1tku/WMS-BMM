@@ -127,7 +127,7 @@ export class AddReleasesElementsComponent implements OnInit {
     this.releaseElementsService.putArticle(this.idArticleForm.value)
       .subscribe({
         next: (res) => {
-          localStorage.removeItem('LocalizationID');
+          /*localStorage.removeItem('LocalizationID');
           localStorage.removeItem('WarehouseID');
           localStorage.removeItem('LocID');
           localStorage.removeItem('ReceiptsID');
@@ -136,7 +136,7 @@ export class AddReleasesElementsComponent implements OnInit {
           localStorage.removeItem('ArticleID');
           localStorage.removeItem('SumWeightArticle');
           localStorage.removeItem('ArticleWeight');
-          localStorage.removeItem('Quantity');
+          localStorage.removeItem('Quantity');*/
         }
       })
   };

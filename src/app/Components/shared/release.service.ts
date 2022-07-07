@@ -51,9 +51,9 @@ export class ReleaseService {
     return this.http.post<any>(this.rootUrl + '/api/releaseElements/', data, {headers: headers});
   }
 
-  getReleaseElements() {
+  getReleaseElements(id: number) {
     var headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('userToken')});
-    return this.http.get<any>(this.rootUrl + '/api/releaseElements', {headers: headers});
+    return this.http.get<any>(this.rootUrl + '/api/releaseElements/operationId/' + id, {headers: headers});
   }
 
   putReleaseElements(data:any, id : number){

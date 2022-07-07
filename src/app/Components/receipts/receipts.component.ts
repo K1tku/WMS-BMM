@@ -5,6 +5,8 @@ import {MatSortModule, MatSort} from '@angular/material/sort';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {ReceiptsService} from "../shared/receipts.service";
 import {AddReceiptsComponent} from "./add-receipts/add-receipts.component";
+import {ReleasesElementsComponent} from "../releases/releases-elements/releases-elements.component";
+import {ReceiptsElementsComponent} from "./receipts-elements/receipts-elements.component";
 
 
 @Component({
@@ -14,7 +16,7 @@ import {AddReceiptsComponent} from "./add-receipts/add-receipts.component";
 })
 export class ReceiptsComponent implements OnInit {
 
-  displayedColumns: string[] = ['documentNumber', 'warehouseId', 'customerId', 'creationDate', 'description'];
+  displayedColumns: string[] = ['documentNumber', 'warehouseId', 'customerId', 'creationDate', 'description', 'action'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -34,6 +36,17 @@ export class ReceiptsComponent implements OnInit {
         setTimeout(()=>{
         this.getAllReceipts();
         }, 500);
+      }
+    })
+  }
+
+  openReceiptsMovements(id: string) {
+    localStorage.setItem('ReceiptsIdToElement', id)
+    this.dialog.open(ReceiptsElementsComponent, {
+      width: '80%'
+    }).afterClosed().subscribe(val=>{
+      if(val ==='save'){
+        this.getAllReceipts();
       }
     })
   }

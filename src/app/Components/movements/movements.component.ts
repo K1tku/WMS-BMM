@@ -5,6 +5,8 @@ import {MatSortModule, MatSort} from '@angular/material/sort';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {MovementsService} from "../shared/movements.service";
 import {AddMovementsComponent} from "./add-movements/add-movements.component";
+import {ReceiptsElementsComponent} from "../receipts/receipts-elements/receipts-elements.component";
+import {MovementsElementsComponent} from "./movements-elements/movements-elements.component";
 
 
 @Component({
@@ -14,7 +16,7 @@ import {AddMovementsComponent} from "./add-movements/add-movements.component";
 })
 export class MovementsComponent implements OnInit {
 
-  displayedColumns: string[] = ['documentNumber', 'sourceWarehouseId', 'targetWarehouseId', 'creationDate', 'description'];
+  displayedColumns: string[] = ['documentNumber', 'sourceWarehouseId', 'targetWarehouseId', 'creationDate', 'description', 'action'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -34,6 +36,17 @@ export class MovementsComponent implements OnInit {
         setTimeout(()=>{
           this.getAllMovements();
         }, 500);
+      }
+    })
+  }
+
+  openMovementsMovements(id: string) {
+    localStorage.setItem('MovementsIdToElement', id)
+    this.dialog.open(MovementsElementsComponent, {
+      width: '80%'
+    }).afterClosed().subscribe(val=>{
+      if(val ==='save'){
+        this.getAllMovements();
       }
     })
   }

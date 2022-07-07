@@ -5,6 +5,8 @@ import {MatSortModule, MatSort} from '@angular/material/sort';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {ReleaseService} from "../shared/release.service";
 import {AddReleasesComponent} from "./add-releases/add-releases.component";
+import {AddUserComponent} from "../operators/add-user/add-user.component";
+import {ReleasesElementsComponent} from "./releases-elements/releases-elements.component";
 
 @Component({
   selector: 'bmm-releases',
@@ -13,7 +15,7 @@ import {AddReleasesComponent} from "./add-releases/add-releases.component";
 })
 export class ReleasesComponent implements OnInit {
 
-  displayedColumns: string[] = ['documentNumber', 'warehouseId', 'customerId', 'creationDate', 'description'];
+  displayedColumns: string[] = ['documentNumber', 'warehouseId', 'customerId', 'creationDate', 'description', 'action'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -34,6 +36,17 @@ export class ReleasesComponent implements OnInit {
         setTimeout(()=>{
           this.getAllReleases();
         }, 500);
+      }
+    })
+  }
+
+  openReleaseMovements(id: string) {
+    localStorage.setItem('ReleaseIdToElement', id)
+    this.dialog.open(ReleasesElementsComponent, {
+      width: '80%'
+    }).afterClosed().subscribe(val=>{
+      if(val ==='save'){
+        this.getAllReleases();
       }
     })
   }

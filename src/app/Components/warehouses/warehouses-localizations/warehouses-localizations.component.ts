@@ -8,6 +8,7 @@ import {WarehousesService} from "../../shared/warehouses-service";
 import {RowsComponent} from "./rows/rows.component";
 import {WarehousesLocalizationService} from "../../shared/warehousesLocalization.service";
 import {AddLocalizationComponent} from "./add-localization/add-localization.component";
+import {FormBuilder, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'bmm-warehouses-localizations',
@@ -16,13 +17,15 @@ import {AddLocalizationComponent} from "./add-localization/add-localization.comp
 })
 export class WarehousesLocalizationsComponent implements OnInit {
 
+  localizationId !: FormGroup;
+
   displayedColumns: string[] = ['name','displayName', 'capacity', 'action'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private warehousesLocalizationService: WarehousesLocalizationService, private dialog: MatDialog) { }
+  constructor(private warehousesLocalizationService: WarehousesLocalizationService, private dialog: MatDialog, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.getAllLocalizations();
@@ -38,7 +41,8 @@ export class WarehousesLocalizationsComponent implements OnInit {
   }
 
   getAllLocalizations(){
-    this.warehousesLocalizationService.getLocalizations()
+    this.localizationIdToMovements();
+    this.warehousesLocalizationService.getLocalizationsWarehouse(this.localizationId.value.warehouseId)
       .subscribe({
         next:(res)=>{
           this.dataSource = new MatTableDataSource(res)
@@ -82,6 +86,14 @@ export class WarehousesLocalizationsComponent implements OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  localizationIdToMovements(){
+    this.localizationId = this.formBuilder.group({
+      warehouseId: [localStorage.getItem('WarehouseID')],
+
+    })
+
   }
 
 

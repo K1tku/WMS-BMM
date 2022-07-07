@@ -51,10 +51,15 @@ export class ReceiptsService {
     return this.http.post<any>(this.rootUrl + '/api/receiptElements', data, {headers: headers});
   }
 
-  getReceiptsElements() {
+  getReceiptsElements(id: number) {
+    var headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('userToken')});
+    return this.http.get<any>(this.rootUrl + '/api/receiptElements/operationId/' + id, {headers: headers});
+  }
+
+  /*getReceiptsElements() {
     var headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('userToken')});
     return this.http.get<any>(this.rootUrl + '/api/receiptElements', {headers: headers});
-  }
+  }*/
 
   putReceiptsElements(data:any, id : number){
     var headers = new HttpHeaders({'Authorization': 'Bearer ' + localStorage.getItem('userToken')});
