@@ -104,7 +104,7 @@ export class AddMovementsElementsComponent implements OnInit {
               }, 240);
               setTimeout(()=>{
                 this.putArticleID();
-              }, 280);
+              }, 350);
             },
             error: () => {
               alert("Error while adding Element")
@@ -157,7 +157,7 @@ export class AddMovementsElementsComponent implements OnInit {
     this.movementsElementsService.putArticle(this.idArticleForm.value)
       .subscribe({
         next: (res) => {
-          localStorage.removeItem('LocalizationID');
+          /*localStorage.removeItem('LocalizationID');
           localStorage.removeItem('WarehouseID');
           localStorage.removeItem('LocID');
           localStorage.removeItem('ReceiptsID');
@@ -168,7 +168,7 @@ export class AddMovementsElementsComponent implements OnInit {
           localStorage.removeItem('ArticleWeight');
           localStorage.removeItem('Quantity');
           localStorage.removeItem('TargetWarehouseID');
-          localStorage.removeItem('TargetLocalizationID');
+          localStorage.removeItem('TargetLocalizationID');*/
         }
       })
   };

@@ -77,7 +77,7 @@ export class AddReleasesElementsComponent implements OnInit {
               this.releaseElementsForm.reset();
               this.dialogRef.close('save');
 
-
+              this.ViewChild();
               setTimeout(()=>{
                 this.putOperationID();
               }, 80);

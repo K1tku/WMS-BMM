@@ -1,0 +1,60 @@
+
+<div class="container">
+  <div style="margin-top: 10px; margin-left: 10px">
+
+    <mat-form-field appearance="standard">
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+    </mat-form-field>
+
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" matSort>
+
+
+        <ng-container matColumnDef="articleCode">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Article Code </th>
+          <td mat-cell *matCellDef="let row"> {{row.articleCode}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="articleId">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Article Id </th>
+          <td mat-cell *matCellDef="let row"> {{row.articleId}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="quantity">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Quantity </th>
+          <td mat-cell *matCellDef="let row"> {{row.quantity}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="weight">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Weight </th>
+          <td mat-cell *matCellDef="let row"> {{row.weight}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="warehouseId">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> WarehouseId </th>
+          <td mat-cell *matCellDef="let row"> {{row.warehouseId}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="localizationId">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Localization Id </th>
+          <td mat-cell *matCellDef="let row"> {{row.localizationId}} </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+        </tr>
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+
+    </div>
+  </div>
+</div>

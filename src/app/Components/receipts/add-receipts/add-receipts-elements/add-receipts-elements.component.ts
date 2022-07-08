@@ -80,7 +80,7 @@ export class AddReceiptsElementsComponent implements OnInit {
               this.receiptsElementsForm.reset();
               this.dialogRef.close('save');
 
-              /*this.ViewChild();*/
+              this.ViewChild();
               setTimeout(()=>{
               this.putOperationID();
               }, 80);
@@ -131,7 +131,7 @@ export class AddReceiptsElementsComponent implements OnInit {
     this.receiptsElementsService.putArticle(this.idArticleForm.value)
       .subscribe({
         next: (res) => {
-          localStorage.removeItem('LocalizationID');
+          /*localStorage.removeItem('LocalizationID');
           localStorage.removeItem('WarehouseID');
           localStorage.removeItem('LocID');
           localStorage.removeItem('ReceiptsID');
@@ -140,7 +140,7 @@ export class AddReceiptsElementsComponent implements OnInit {
           localStorage.removeItem('ArticleID');
           localStorage.removeItem('SumWeightArticle');
           localStorage.removeItem('ArticleWeight');
-          localStorage.removeItem('Quantity');
+          localStorage.removeItem('Quantity');*/
         }
       })
   };

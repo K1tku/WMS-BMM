@@ -87,7 +87,7 @@ export class AddLocalizationComponent implements OnInit {
     this.localizationService.putIdToLocalizations(this.addWToLoc.value)
       .subscribe({
         next: (res) => {
-          localStorage.removeItem('WarehouseID');
+         /* localStorage.removeItem('WarehouseID');*/
         }
       })
   }

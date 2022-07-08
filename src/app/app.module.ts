@@ -53,6 +53,7 @@ import { AddMovementsElementsComponent } from './Components/movements/add-moveme
 import { ReleasesElementsComponent } from './Components/releases/releases-elements/releases-elements.component';
 import { MovementsElementsComponent } from './Components/movements/movements-elements/movements-elements.component';
 import { ReceiptsElementsComponent } from './Components/receipts/receipts-elements/receipts-elements.component';
+import { LocalizationResourcesComponent } from './Components/localization-resources/localization-resources.component';
 
 
 @NgModule({
@@ -81,7 +82,8 @@ import { ReceiptsElementsComponent } from './Components/receipts/receipts-elemen
     AddMovementsElementsComponent,
     ReleasesElementsComponent,
     MovementsElementsComponent,
-    ReceiptsElementsComponent
+    ReceiptsElementsComponent,
+    LocalizationResourcesComponent
   ],
   entryComponents:[
    AddUserComponent

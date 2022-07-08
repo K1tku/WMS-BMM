@@ -23,7 +23,7 @@ export class AddwarehousesComponent implements OnInit {
     this.warehousesForm = this.formBuilder.group({
       name: ['', Validators.required],
       displayName: ['', Validators.required],
-      capacity: ['', Validators.required]
+      capacity: ['']
     })
 
 

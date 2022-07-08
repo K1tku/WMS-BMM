@@ -13,6 +13,7 @@ import {ReleasesComponent} from "./Components/releases/releases.component";
 import {MovementsComponent} from "./Components/movements/movements.component";
 import {CustomersComponent} from "./Components/customers/customers.component";
 import {AuthGuard} from "./auth/auth.guard";
+import {LocalizationResourcesComponent} from "./Components/localization-resources/localization-resources.component";
 
 const routes: Routes = [
   {
@@ -45,6 +46,9 @@ const routes: Routes = [
   {
     path : 'Customers', component : CustomersComponent,canActivate:[AuthGuard]
   },
+  {
+    path : 'Resources', component : LocalizationResourcesComponent,canActivate:[AuthGuard]
+  },
 
 ];
 
@@ -62,6 +66,7 @@ export const routingComponents = [OperatorsComponent,
   ReleasesComponent,
   MovementsComponent,
   CustomersComponent,
-  MainPageComponent
+  MainPageComponent,
+  LocalizationResourcesComponent
 
 ]
