@@ -72,10 +72,10 @@ export class AddReceiptsElementsComponent implements OnInit {
               this.getArticleWeight();
               setTimeout(()=>{
               this.sumWeight();
-              }, 0);
+              }, 100);
               setTimeout(()=>{
               this.putWeightToElement();
-              }, 50);
+              }, 200);
               alert("Elements added successfully")
               this.receiptsElementsForm.reset();
               this.dialogRef.close('save');
@@ -83,16 +83,16 @@ export class AddReceiptsElementsComponent implements OnInit {
               this.ViewChild();
               setTimeout(()=>{
               this.putOperationID();
-              }, 80);
+              }, 300);
               setTimeout(()=>{
                 this.putWarehouseID();
-              }, 100);
+              }, 400);
               setTimeout(()=>{
                 this.putLocalizationID();
-              }, 200);
+              }, 500);
               setTimeout(()=>{
                 this.putArticleID();
-              }, 300);
+              }, 600);
             },
             error: () => {
               alert("Error while adding Element")

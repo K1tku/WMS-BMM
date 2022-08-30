@@ -83,13 +83,13 @@ export class AddReleasesElementsComponent implements OnInit {
               }, 80);
               setTimeout(()=>{
                 this.putWarehouseID();
-              }, 100);
+              }, 130);
               setTimeout(()=>{
                 this.putLocalizationID();
-              }, 200);
+              }, 180);
               setTimeout(()=>{
                 this.putArticleID();
-              }, 300);
+              }, 230);
             },
             error: () => {
               alert("Error while adding Element")
