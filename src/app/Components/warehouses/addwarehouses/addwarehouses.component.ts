@@ -11,7 +11,7 @@ import {MatDialogRef, MAT_DIALOG_DATA} from "@angular/material/dialog";
 export class AddwarehousesComponent implements OnInit {
 
   warehousesForm !: FormGroup;
-  actionBtn: string = "Save";
+  actionBtn: string = "Zapisz";
 
   constructor(private formBuilder: FormBuilder
     , private warehousesService: WarehousesService
@@ -28,7 +28,7 @@ export class AddwarehousesComponent implements OnInit {
 
 
     if (this.editData) {
-      this.actionBtn = "Update";
+      this.actionBtn = "Zaktualizuj";
       this.warehousesForm.controls['name'].setValue(this.editData.name);
       this.warehousesForm.controls['displayName'].setValue(this.editData.displayName);
       this.warehousesForm.controls['capacity'].setValue(this.editData.capacity);

@@ -12,7 +12,7 @@ import {MatDialogRef, MAT_DIALOG_DATA} from "@angular/material/dialog";
 export class AddCustomerComponent implements OnInit {
 
   customerForm !: FormGroup;
-  actionBtn: string = "Save";
+  actionBtn: string = "Zapisz";
 
   constructor(private formBuilder: FormBuilder
     , private customerService: CustomerService
@@ -33,7 +33,7 @@ export class AddCustomerComponent implements OnInit {
 
 
     if (this.editData) {
-      this.actionBtn = "Update";
+      this.actionBtn = "Zaktualizuj";
       this.customerForm.controls['name'].setValue(this.editData.name);
       this.customerForm.controls['street'].setValue(this.editData.street);
       this.customerForm.controls['city'].setValue(this.editData.city);

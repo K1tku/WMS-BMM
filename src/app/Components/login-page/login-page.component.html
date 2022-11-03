@@ -1,3 +1,52 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Login</mat-card-title>
+  </mat-card-header>
+<!--<div *ngIf="isLoginError" class="red-text center error-message">
+  <i class="material-icons">error</i> Incorrect username or password
+</div>-->
+  <mat-card-content>
+<form #loginForm="ngForm" class="example-form" (ngSubmit)="OnSubmit(UserName.value,Password.value)">
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <td>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Username" #UserName ngModel name="Nazwa Użytkownika" placeholder="Nazwa Użytkownika" required>
+      </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+    <td><mat-form-field class="example-full-width">
+      <input matInput placeholder="Password" #Password ngModel name="Hasło" placeholder="Hasło" required>
+    </mat-form-field></td>
+    </tr></table>
+
+ <!-- <div class="row">
+    <div class="input-field col s12">
+      <i class="material-icons prefix">vpn_key</i>
+      <input type="password" #Password ngModel name="Password" placeholder="Password" required>
+    </div>
+  </div>
+-->
+  <!--<div class="row">
+    <div class="input-field col s12">
+      <button [disabled]="!loginForm.valid" class="btn-large btn-submit" type="submit">Login</button>
+    </div>
+  </div>-->
+<!--</form>-->
+</form>
+  </mat-card-content>
+  <mat-card-actions class="input-field col s12">
+    <button mat-raised-button [disabled]="!loginForm.valid" class="btn-large btn-submit" type="submit">Login</button>
+  </mat-card-actions>
+</mat-card>
+
+
+
+<!--------------------------Działające logowanie----------------------------->
+
+<!--
 <div *ngIf="isLoginError" class="red-text center error-message">
   <i class="material-icons">error</i> Incorrect username or password
 </div>
@@ -19,4 +68,4 @@
       <button [disabled]="!loginForm.valid" class="btn-large btn-submit" type="submit">Login</button>
     </div>
   </div>
-</form>
+</form>-->

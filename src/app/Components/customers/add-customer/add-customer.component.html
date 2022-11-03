@@ -1,42 +1,42 @@
-<h1 mat-dialog-title>Add Customer</h1>
+<h1 mat-dialog-title>Dodaj Kontrahenta</h1>
 
 
 
 <div mat-dialog-content>
   <form [formGroup]="customerForm">
     <mat-form-field appearance="outline">
-      <mat-label>Name</mat-label>
-      <input formControlName="name" matInput placeholder="Name">
+      <mat-label>Nazwa</mat-label>
+      <input formControlName="name" matInput placeholder="Nazwa">
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-      <mat-label>Street</mat-label>
-      <input formControlName="street" matInput placeholder="street">
+      <mat-label>Ulica</mat-label>
+      <input formControlName="street" matInput placeholder="Ulica">
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-      <mat-label>City</mat-label>
-      <input formControlName="city" matInput placeholder="city">
+      <mat-label>Miasto</mat-label>
+      <input formControlName="city" matInput placeholder="Miasto">
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-    <mat-label>Postal Code</mat-label>
-    <input formControlName="postalCode" matInput placeholder="postalCode">
+    <mat-label>Kod Pocztowy</mat-label>
+    <input formControlName="postalCode" matInput placeholder="Kod pocztowy">
   </mat-form-field>
 
     <mat-form-field appearance="outline">
-      <mat-label>Country</mat-label>
-      <input formControlName="country" matInput placeholder="country">
+      <mat-label>Kraj</mat-label>
+      <input formControlName="country" matInput placeholder="Kraj">
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-      <mat-label>Email</mat-label>
-      <input formControlName="email" matInput placeholder="email">
+      <mat-label>Mail</mat-label>
+      <input formControlName="email" matInput placeholder="Mail">
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-      <mat-label>Phone Number</mat-label>
-      <input formControlName="phoneNumber" matInput placeholder="phoneNumber">
+      <mat-label>Numer telefonu</mat-label>
+      <input formControlName="phoneNumber" matInput placeholder="Numer telefonu">
     </mat-form-field>
 
 
@@ -44,6 +44,6 @@
 </div>
 
 <div mat-dialog-action [align]="'end'">
-  <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+  <button mat-raised-button color="warn" mat-dialog-close>Zamknij</button>
   <button style="margin-left: 8px" mat-raised-button color="primary" (click)="addCustomers()">{{actionBtn}}</button>
 </div>

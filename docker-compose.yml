@@ -1,0 +1,23 @@
+version: '3.7'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: wms-bmm
+    ports:
+      -  "4200:80"
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    image: bmm-wms
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_APPLICATION_JSON: '{
+              "spring.datasource.url":"jdbc:sqlserver://192.168.31.96:1433;Database=WMSDatabase;Trusted_Connection=True",
+              "spring.datasource.username":"WMSDefaultLogin",
+              "spring.datasource.password":"DefaultPassword123!"
+            }'

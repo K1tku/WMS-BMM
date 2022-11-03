@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>Add Receipts</h1>
+<h1 mat-dialog-title>Dodaj przesunięcie</h1>
 
 
 
@@ -6,14 +6,14 @@
   <form [formGroup]="movementsForm">
     <mat-form-field appearance="outline">
 
-      <mat-label>Description</mat-label>
+      <mat-label>Opis</mat-label>
       <input formControlName="description" matInput placeholder="description">
     </mat-form-field>
 
 
     <mat-form-field appearance="outline">
-      <mat-label>Warehouse</mat-label>
-      <mat-select formControlName="warehouseId" matInput placeholder="warehouseId">
+      <mat-label>Magazyn</mat-label>
+      <mat-select formControlName="warehouseId" matInput placeholder="Magazyn">
         <mat-option *ngFor="let row of Warehouses" [value]="row.id">
           {{row.name}}
         </mat-option>
@@ -21,8 +21,8 @@
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-      <mat-label>Target Warehouse</mat-label>
-      <mat-select formControlName="targetWarehouseId" matInput placeholder="targetWarehouseId">
+      <mat-label>Magazyn docelowy</mat-label>
+      <mat-select formControlName="targetWarehouseId" matInput placeholder="Magazyn docelowy">
         <mat-option *ngFor="let row of Warehouses" [value]="row.id">
           {{row.name}}
         </mat-option>
@@ -33,6 +33,6 @@
 </div>
 
 <div mat-dialog-action [align]="'end'">
-  <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+  <button mat-raised-button color="warn" mat-dialog-close>Zamknij</button>
   <button style="margin-left: 8px" mat-raised-button color="primary" (click)="addMovements()">{{actionBtn}}</button>
 </div>

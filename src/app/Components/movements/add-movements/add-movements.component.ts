@@ -17,7 +17,7 @@ export class AddMovementsComponent implements OnInit {
   movementsForm !: FormGroup;
   idWarehouses !: FormGroup;
   idTargetWarehouses !: FormGroup;
-  actionBtn: string = "Save";
+  actionBtn: string = "Zapisz";
 
   constructor(private formBuilder: FormBuilder
     , private movementsService: MovementsService

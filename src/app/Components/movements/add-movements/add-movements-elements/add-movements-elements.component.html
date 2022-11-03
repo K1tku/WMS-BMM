@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>Add Elements</h1>
+<h1 mat-dialog-title>Dodaj element</h1>
 
 
 
@@ -6,8 +6,8 @@
   <form [formGroup]="movementsElementsForm">
 
     <mat-form-field appearance="outline">
-      <mat-label>Article</mat-label>
-      <mat-select formControlName="articleId" matInput placeholder="articleId">
+      <mat-label>Towar</mat-label>
+      <mat-select formControlName="articleId" matInput placeholder="Towar">
         <mat-option *ngFor="let row of Articles" [value]="row.id">
           {{row.name}}
         </mat-option>
@@ -15,15 +15,15 @@
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-      <mat-label>Quantity</mat-label>
-      <input formControlName="quantity" matInput placeholder="quantity">
+      <mat-label>Ilość</mat-label>
+      <input formControlName="quantity" matInput placeholder="Ilość">
     </mat-form-field>
 
 
 
     <mat-form-field appearance="outline">
-      <mat-label>Localization</mat-label>
-      <mat-select formControlName="sourceLocalizationId" matInput placeholder="sourceLocalizationId">
+      <mat-label>Lokalizacja</mat-label>
+      <mat-select formControlName="sourceLocalizationId" matInput placeholder="Lokalizacja">
         <mat-option *ngFor="let row of SourceLocalizations" [value]="row.id">
           {{row.displayName}}
         </mat-option>
@@ -31,8 +31,8 @@
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-      <mat-label>Target Localization Id</mat-label>
-      <mat-select formControlName="targetLocalizationId" matInput placeholder="targetLocalizationId">
+      <mat-label>Lokalizacja Docelowa</mat-label>
+      <mat-select formControlName="targetLocalizationId" matInput placeholder="Lokalizacja docelowa">
         <mat-option *ngFor="let row of TargetLocalizations" [value]="row.id">
           {{row.displayName}}
         </mat-option>
@@ -43,6 +43,6 @@
 </div>
 
 <div mat-dialog-action [align]="'end'">
-  <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+  <button mat-raised-button color="warn" mat-dialog-close>Zamknij</button>
   <button style="margin-left: 8px" mat-raised-button color="primary" (click)="addMovementsElements()">{{actionBtn}}</button>
 </div>

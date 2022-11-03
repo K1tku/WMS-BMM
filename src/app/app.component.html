@@ -14,59 +14,59 @@
 <mat-sidenav-container>
   <mat-sidenav  #sidenav="matSidenav" [style.display]="displayLoginv2">
 
-    <button mat-button [matMenuTriggerFor]="menu">Warehouses</button>
+   <!-- <button mat-button [matMenuTriggerFor]="menu">Warehouses</button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item>WG</button>
       <button mat-menu-item>MAT</button>
       <button mat-menu-item>PROD</button>
     </mat-menu>
 
-    <mat-divider></mat-divider>
+    <mat-divider></mat-divider>-->
 
     <button mat-button class="menu-button" routerLink="/Dashboard">
       <mat-icon>dashboard</mat-icon>
-      <span>Dashboard</span>
+      <span>Strona Główna</span>
     </button>
 
     <button mat-button class="menu-button" routerLink="/Operators">
       <mat-icon>people</mat-icon>
-      <span>Operators</span>
+      <span>Operatorzy</span>
     </button>
     <button mat-button class="menu-button" routerLink="/Warehouses">
       <mat-icon>location_city</mat-icon>
-      <span>Warehouses</span>
+      <span>Magazyny</span>
     </button>
 
     <button mat-button class="menu-button" routerLink="/Items">
       <mat-icon>subtitles</mat-icon>
-      <span>Articles</span>
+      <span>Towary</span>
     </button>
     <button mat-button class="menu-button" routerLink="/Resources">
       <mat-icon>apps</mat-icon>
-      <span>Resources</span>
+      <span>Zasoby</span>
     </button>
     <button mat-button class="menu-button" routerLink="/Orders">
       <mat-icon>repeat</mat-icon>
-      <span>Operations</span>
+      <span>Operacje</span>
     </button>
     <button mat-button class="menu-button" routerLink="/Receipts">
       <mat-icon>vertical_align_bottom</mat-icon>
-      <span>Receipts</span>
+      <span>Przyjęcia</span>
     </button>
     <button mat-button class="menu-button" routerLink="/Releases">
       <mat-icon>vertical_align_top</mat-icon>
-      <span>Releases</span>
+      <span>Wydania</span>
     </button>
     <button mat-button class="menu-button" routerLink="/Movements">
       <mat-icon>swap_horiz</mat-icon>
-      <span>Movements</span>
+      <span>Przesunięcia</span>
     </button>
     <button mat-button class="menu-button" routerLink="/Customers">
       <mat-icon>people</mat-icon>
-      <span>Customers</span>
+      <span>Konrahenci</span>
     </button>
     <div style="margin-top: 10px">
-    <a (click)="Logout()" style="font-size: 20px;">Logout<mat-icon>power_settings_new</mat-icon></a>
+    <a (click)="Logout()" style="font-size: 20px;">Wyloguj<mat-icon>power_settings_new</mat-icon></a>
     </div>
   </mat-sidenav>
   <mat-sidenav-content >

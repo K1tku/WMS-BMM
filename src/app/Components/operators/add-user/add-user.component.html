@@ -1,33 +1,33 @@
-<h1 mat-dialog-title>Add Users</h1>
+<h1 mat-dialog-title>Dodaj Operatora</h1>
 
 
 
 <div mat-dialog-content>
   <form [formGroup]="usersForm">
     <mat-form-field appearance="outline">
-      <mat-label>Name</mat-label>
-      <input formControlName="name" matInput placeholder="Name">
+      <mat-label>Imię</mat-label>
+      <input formControlName="name" matInput placeholder="Imię">
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-      <mat-label>Surname</mat-label>
-      <input formControlName="surname" matInput placeholder="surname">
+      <mat-label>Nazwisko</mat-label>
+      <input formControlName="surname" matInput placeholder="Nazwisko">
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-      <mat-label>Username</mat-label>
-      <input formControlName="username" matInput placeholder="username">
+      <mat-label>Nazwa</mat-label>
+      <input formControlName="username" matInput placeholder="Nazwa">
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-      <mat-label>Password</mat-label>
-      <input formControlName="password" matInput placeholder="password">
+      <mat-label>Hasło</mat-label>
+      <input formControlName="password" matInput placeholder="Hasło">
     </mat-form-field>
 
   </form>
 </div>
 
 <div mat-dialog-action [align]="'end'">
-  <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+  <button mat-raised-button color="warn" mat-dialog-close>Zamknij</button>
   <button style="margin-left: 8px" mat-raised-button color="primary" (click)="addUsers()">{{actionBtn}}</button>
 </div>

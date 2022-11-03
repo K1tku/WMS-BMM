@@ -13,7 +13,7 @@ import {MatDialogRef, MAT_DIALOG_DATA} from "@angular/material/dialog";
 export class AddUserComponent implements OnInit {
 
   usersForm !: FormGroup;
-  actionBtn: string = "Save";
+  actionBtn: string = "Zapisz";
 
 
   constructor(private formBuilder: FormBuilder

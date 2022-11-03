@@ -22,7 +22,7 @@ export class AddMovementsElementsComponent implements OnInit {
   idTargetLocalizationForm !: FormGroup;
   idArticleForm !: FormGroup;
   elementWeightForm !: FormGroup;
-  actionBtn: string = "Save";
+  actionBtn: string = "Zapisz";
 
   dataSource!: MatTableDataSource<any>;
 

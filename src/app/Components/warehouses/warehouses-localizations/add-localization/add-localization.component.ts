@@ -12,7 +12,7 @@ export class AddLocalizationComponent implements OnInit {
 
   localizationsForm !: FormGroup;
   addWToLoc !: FormGroup;
-  actionBtn: string = "Save";
+  actionBtn: string = "Zapisz";
 
   constructor(private formBuilder: FormBuilder
     , private localizationService: WarehousesLocalizationService
@@ -29,7 +29,7 @@ export class AddLocalizationComponent implements OnInit {
 
 
     if (this.editData) {
-      this.actionBtn = "Update";
+      this.actionBtn = "Zaktualizuj";
       this.localizationsForm.controls['name'].setValue(this.editData.name);
       this.localizationsForm.controls['displayName'].setValue(this.editData.displayName);
       this.localizationsForm.controls['capacity'].setValue(this.editData.capacity);

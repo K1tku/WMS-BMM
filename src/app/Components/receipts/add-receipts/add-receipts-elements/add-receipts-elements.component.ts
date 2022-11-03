@@ -21,7 +21,7 @@ export class AddReceiptsElementsComponent implements OnInit {
   idLocalizationForm !: FormGroup;
   idArticleForm !: FormGroup;
   elementWeightForm !: FormGroup;
-  actionBtn: string = "Save";
+  actionBtn: string = "Zapisz";
 
   dataSource!: MatTableDataSource<any>;
 

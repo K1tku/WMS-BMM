@@ -16,7 +16,7 @@ export class AddReceiptsComponent implements OnInit {
   receiptsForm !: FormGroup;
   idWarehouses !: FormGroup;
   idCustomers !: FormGroup;
-  actionBtn: string = "Save";
+  actionBtn: string = "Zapisz";
 
   constructor(private formBuilder: FormBuilder
     , private receiptsService: ReceiptsService

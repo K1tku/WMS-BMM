@@ -16,7 +16,7 @@ export class AddReleasesComponent implements OnInit {
   releaseForm !: FormGroup;
   idWarehouses !: FormGroup;
   idCustomers !: FormGroup;
-  actionBtn: string = "Save";
+  actionBtn: string = "Zapisz";
 
   constructor(private formBuilder: FormBuilder
     , private ReleaseService: ReleaseService

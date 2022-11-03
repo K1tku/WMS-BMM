@@ -1,14 +1,14 @@
 <mat-toolbar>
 
-  <button mat-raised-button color="warm" (click)="openDialog()" >Add Releases</button>
+  <button mat-raised-button color="warm" (click)="openDialog()" >Dodaj wydanie</button>
 </mat-toolbar>
 
 <div class="container">
   <div style="margin-top: 10px; margin-left: 10px">
 
     <mat-form-field appearance="standard">
-      <mat-label>Filter</mat-label>
-      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+      <mat-label>Filtr</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Przykładowy tekst" #input>
     </mat-form-field>
 
     <div class="mat-elevation-z8">
@@ -16,33 +16,33 @@
 
 
         <ng-container matColumnDef="documentNumber">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Document Number </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Numer dokumentu </th>
           <td mat-cell *matCellDef="let row"> {{row.documentNumber}} </td>
         </ng-container>
 
 
         <ng-container matColumnDef="creationDate">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Creation Date </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Data utworzenia</th>
           <td mat-cell *matCellDef="let row"> {{row.creationDate}} </td>
         </ng-container>
 
         <ng-container matColumnDef="warehouseId">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Warehouse Id </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Id Magazynu</th>
           <td mat-cell *matCellDef="let row"> {{row.warehouseId}} </td>
         </ng-container>
 
         <ng-container matColumnDef="customerId">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Customer Id </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Id Kontrahenta </th>
           <td mat-cell *matCellDef="let row"> {{row.customerId}} </td>
         </ng-container>
 
         <ng-container matColumnDef="description">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Opis </th>
           <td mat-cell *matCellDef="let row"> {{row.description}} </td>
         </ng-container>
 
         <ng-container matColumnDef="action" class="actionicon">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Elements </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Elementy </th>
           <td mat-cell *matCellDef="let row">
             <button mat-icon-button (click)="openReleaseMovements(row.id)">
               <mat-icon>reorder</mat-icon>

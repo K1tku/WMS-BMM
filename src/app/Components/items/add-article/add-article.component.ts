@@ -13,7 +13,7 @@ import {WarehousesService} from "../../shared/warehouses-service";
 export class AddArticleComponent implements OnInit {
 
   articlesForm !: FormGroup;
-  actionBtn: string = "Save";
+  actionBtn: string = "Zapisz";
 
   constructor(private formBuilder: FormBuilder
     , private itemService: ItemService

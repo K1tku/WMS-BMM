@@ -1,14 +1,14 @@
 <mat-toolbar>
 
-  <button mat-raised-button color="warm" (click)="openDialog()" >Add Articles</button>
+  <button mat-raised-button color="warm" (click)="openDialog()" >Dodaj towar</button>
 </mat-toolbar>
 
 <div class="container">
   <div style="margin-top: 10px; margin-left: 10px">
 
     <mat-form-field appearance="standard">
-      <mat-label>Filter</mat-label>
-      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+      <mat-label>Filtr</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Przykładowy tekst" #input>
     </mat-form-field>
 
     <div class="mat-elevation-z8">
@@ -16,45 +16,45 @@
 
 
         <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Nazwa </th>
           <td mat-cell *matCellDef="let row"> {{row.name}} </td>
         </ng-container>
 
 
         <ng-container matColumnDef="articleCode">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Article Code </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Kod towaru </th>
           <td mat-cell *matCellDef="let row"> {{row.articleCode}} </td>
         </ng-container>
 
         <ng-container matColumnDef="weight">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Weight </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Waga </th>
           <td mat-cell *matCellDef="let row"> {{row.weight}} </td>
         </ng-container>
 
         <ng-container matColumnDef="unitName">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Unit </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Jednostka miary </th>
           <td mat-cell *matCellDef="let row"> {{row.unitName}} </td>
         </ng-container>
 
         <ng-container matColumnDef="creationDate">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Creation Date </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Data stworzenia </th>
           <td mat-cell *matCellDef="let row"> {{row.creationDate}} </td>
         </ng-container>
 
 
         <ng-container matColumnDef="modificationDate">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Modification Date </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Data modyfikacji </th>
           <td mat-cell *matCellDef="let row"> {{row.modificationDate}} </td>
         </ng-container>
 
         <ng-container matColumnDef="user">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> User </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Użytkownik </th>
           <td mat-cell *matCellDef="let row"> {{row.user}} </td>
         </ng-container>
 
 
         <ng-container matColumnDef="action" class="actionicon">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Akcje </th>
           <td mat-cell *matCellDef="let row">
             <button mat-icon-button (click)="editArticles(row)">
               <mat-icon>edit</mat-icon>
@@ -70,7 +70,7 @@
 
 
         <tr class="mat-row" *matNoDataRow>
-          <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+          <td class="mat-cell" colspan="4">Brak wyfiltrowanych danych "{{input.value}}"</td>
         </tr>
       </table>
 
